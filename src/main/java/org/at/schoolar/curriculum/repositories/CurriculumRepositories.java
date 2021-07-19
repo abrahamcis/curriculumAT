@@ -1,14 +1,12 @@
 package org.at.schoolar.curriculum.repositories;
 
 import org.at.schoolar.curriculum.model.Curriculum;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
 
-public interface CurriculumRepositories {
+@Repository
+public interface CurriculumRepositories extends MongoRepository<Curriculum, String> {
 
-    public Curriculum saveCurriculum(Curriculum curriculum);
 
-    public Curriculum findCurriculum(UUID resourceId);
-
-    public Curriculum updateCurriculum(Curriculum curriculum);
 }
