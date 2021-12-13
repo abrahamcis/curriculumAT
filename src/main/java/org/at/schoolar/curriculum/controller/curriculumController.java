@@ -2,10 +2,8 @@ package org.at.schoolar.curriculum.controller;
 
 
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 import org.at.schoolar.curriculum.model.Curriculum;
 import org.at.schoolar.curriculum.model.Response;
-import org.at.schoolar.curriculum.model.ResponseAccepted;
 import org.at.schoolar.curriculum.service.Imp.CurriculumServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
