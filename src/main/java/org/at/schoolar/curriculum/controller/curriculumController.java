@@ -1,6 +1,9 @@
 package org.at.schoolar.curriculum.controller;
 
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.at.schoolar.curriculum.model.Curriculum;
 import org.at.schoolar.curriculum.model.Error;
 import org.at.schoolar.curriculum.model.ErrorDetails;
@@ -19,10 +22,15 @@ import java.util.List;
 
 
 @RestController
+@Api(value = "curriculum", tags = "curriculumAT", description = "curriculum application")
 public class curriculumController {
     @Autowired
     private CurriculumServiceImp curriculumServiceImp;
 
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Record successfully created"),
+            @ApiResponse(code = 400, message = "Incorrect information provided")}
+    )
     @PostMapping("/person")
     public ResponseEntity<Response> addCurriculum(@Valid @RequestBody Curriculum curriculum){
         return curriculumServiceImp.addCurriculum(curriculum);
